@@ -1,0 +1,44 @@
+$colorBlanco:#fff;
+$colorMorado: rgb(226, 211, 235);
+$colorMorado2: rgb(213, 159, 244); 
+
+
+
+@font-face {
+    font-family: "Font-titles";
+    src: url(/assets/Cheee-Jimbo.otf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+//Mixings
+
+
+@mixin flex-box ($justify:center, $aling:center){
+    display: flex;
+    justify-content: $justify;
+    align-items:$aling;
+}
+
+@mixin fontTitles{
+    font-family: "Font-titles";
+    src: url(/assets/Cheee-Jimbo.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin fontText{
+    font-family: "Barlow", sans-serif;
+}
+
+@mixin Tablet{
+    @media screen and (max-width:51.25rem) {@content};
+}
+@mixin Celular{
+    @media screen and (max-width:39rem) {@content};
+}
+
+%styleLinks{
+    text-decoration: none;
+    color: $colorBlanco;
+}

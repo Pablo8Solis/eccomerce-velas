@@ -1,0 +1,484 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Font-titles";
+  src: url(/assets/Cheee-Jimbo.otf);
+  font-weight: bold;
+  font-style: normal;
+}
+.header__menu-mobile-container-links-styles {
+  text-decoration: none;
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-snap-type: y mandatory;
+  overflow-x: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px; /* 1rem = 10px*/
+}
+
+img {
+  max-width: 100%;
+}
+
+.header__seccion-imagen {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Ajusta según necesites */
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.header__seccion-imagen-fondo {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/header-fondo.jpg) no-repeat center/cover;
+  color: #fff;
+  background-color: #6c6868;
+  background-blend-mode: overlay;
+}
+.header__seccion-imagen-onda {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Altura del borde ondulado */
+}
+.header__seccion-imagen-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+.header__seccion-imagen-top-title {
+  color: #fff;
+  font-size: clamp(2.4rem, 5vw, 2.5rem);
+  text-decoration: none;
+  font-family: "Font-titles";
+  src: url(/assets/Cheee-Jimbo.otf);
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
+}
+.header__seccion-imagen-top-icons {
+  cursor: pointer;
+}
+.header__seccion-imagen-top-icons-menu {
+  width: 2.9rem;
+  display: none;
+}
+@media screen and (max-width: 39rem) {
+  .header__seccion-imagen-top-icons-menu {
+    display: block;
+  }
+}
+.header__seccion-imagen-top-icons-cart {
+  width: 2.9rem;
+}
+.header__seccion-imagen-top-containerCart {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.header__seccion-imagen-top-containerCart-cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: rgb(218, 214, 214);
+  color: rgb(0, 0, 0);
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__seccion-imagen-box-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15rem;
+}
+.header__seccion-imagen-box-title-styles {
+  font-size: clamp(1.2rem, 10vw, 7.3rem);
+  font-family: "Font-titles";
+  src: url(/assets/Cheee-Jimbo.otf);
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 39rem) {
+  .header__seccion-imagen-box-title-styles {
+    text-align: center;
+  }
+}
+.header__menu-mobile {
+  width: 400px;
+  background-color: rgb(127, 59, 199);
+  padding: 4rem;
+  height: 88%;
+  border-radius: 1rem;
+  position: fixed;
+  left: -120%;
+  top: 80px;
+  z-index: 2;
+  overflow-y: auto;
+  transition: all 1s ease;
+}
+.header__menu-mobile.show-menu {
+  left: 1%;
+}
+.header__menu-mobile-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+}
+.header__menu-mobile-box-icon {
+  cursor: pointer;
+}
+.header__menu-mobile-container-links {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 5rem;
+  gap: 2rem;
+}
+.header__menu-mobile-container-links-styles {
+  font-size: 3.2rem;
+  font-family: "Font-titles";
+  src: url(/assets/Cheee-Jimbo.otf);
+  font-weight: normal;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.main__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 8rem;
+  grid-row-gap: 6rem;
+  margin-bottom: 4rem;
+  padding: 4rem;
+}
+.main__grid-product-1 {
+  grid-area: 1/1/2/2;
+}
+.main__grid-product-2 {
+  grid-area: 1/2/2/3;
+}
+.main__grid-product-3 {
+  grid-area: 1/3/2/4;
+}
+.main__grid-product-4 {
+  grid-area: 2/1/3/2;
+}
+.main__grid-product-5 {
+  grid-area: 2/3/3/4;
+}
+.main__grid-products-title {
+  font-family: "Font-titles";
+  src: url(/assets/Cheee-Jimbo.otf);
+  font-weight: normal;
+  font-style: normal;
+  font-size: clamp(1rem, 5vw, 2.3rem);
+  padding-top: 1rem;
+}
+.main__grid-products-box-textButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding-top: 1rem;
+}
+@media screen and (max-width: 39rem) {
+  .main__grid-products-box-textButton {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+.main__grid-products-box-textButton-styles {
+  font-family: sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-size: clamp(1rem, 5vw, 1.8rem);
+  color: #3e3d3d;
+}
+.main__grid-products-box-textButton-button {
+  color: #000;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  font-family: "Barlow", sans-serif;
+  background-color: transparent;
+  border: 1px solid #3e3d3d;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+@media screen and (max-width: 39rem) {
+  .main__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 2rem;
+  }
+  .main__grid-product-1 {
+    grid-area: auto;
+  }
+  .main__grid-product-2 {
+    grid-area: auto;
+  }
+  .main__grid-product-3 {
+    grid-area: auto;
+  }
+  .main__grid-product-4 {
+    grid-area: auto;
+  }
+  .main__grid-product-5 {
+    grid-area: auto;
+  }
+}
+.main__consejos-box {
+  position: relative;
+  padding-top: 40px;
+}
+.main__consejos-box-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 1;
+}
+.main__consejos-box-contenido {
+  background-color: rgb(226, 211, 235);
+  padding-top: 7rem;
+  padding-bottom: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+}
+.main__consejos-box-contenido-title {
+  font-family: "Font-titles";
+  src: url(/assets/Cheee-Jimbo.otf);
+  font-weight: normal;
+  font-style: normal;
+  font-size: clamp(1rem, 7vw, 5rem);
+  padding-top: 2rem;
+}
+.main__consejos-box-contenido-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem;
+}
+@media screen and (max-width: 39rem) {
+  .main__consejos-box-contenido-flex {
+    flex-direction: column;
+  }
+}
+.main__consejos-box-contenido-flex-article {
+  background-color: #000;
+  color: rgb(226, 211, 235);
+  padding: 1rem;
+  padding-bottom: 4rem;
+  margin-top: 3rem;
+  height: 45rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main__consejos-box-contenido-flex-article-title {
+  font-family: "Font-titles";
+  src: url(/assets/Cheee-Jimbo.otf);
+  font-weight: normal;
+  font-style: normal;
+  font-size: clamp(1rem, 5vw, 3rem);
+  padding-top: 5rem;
+}
+.main__consejos-box-contenido-flex-article-text {
+  font-family: "Barlow", sans-serif;
+  line-height: 1.5;
+  padding-top: 1rem;
+  font-size: clamp(1rem, 5vw, 1.7rem);
+}
+.main__consejos-box-contenido-flex-article-img {
+  width: 20rem;
+}
+.main__cart {
+  width: 500px;
+  background-color: rgb(127, 59, 199);
+  padding: 3rem;
+  height: 88%;
+  border-radius: 1rem;
+  position: fixed;
+  right: -170%;
+  top: 80px;
+  z-index: 1;
+  overflow-y: auto;
+  transition: all 1s ease;
+}
+.main__cart.show-cart {
+  right: 1%;
+}
+@media screen and (max-width: 39rem) {
+  .main__cart {
+    width: 400px;
+  }
+}
+.main__cart-icons {
+  cursor: pointer;
+}
+.main__cart-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main__cart-top-title {
+  font-size: clamp(1rem, 5vw, 1.9rem);
+  font-family: "Barlow", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+}
+.main__cart-products {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 3.5rem;
+}
+.main__cart-products-img {
+  width: 14rem;
+}
+.main__cart-products-box {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 2rem;
+}
+.main__cart-products-box-text {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main__cart-products-box-text-title {
+  color: #fff;
+  font-family: "Font-titles";
+  src: url(/assets/Cheee-Jimbo.otf);
+  font-weight: normal;
+  font-style: normal;
+  font-size: clamp(1rem, 5vw, 1.9rem);
+  letter-spacing: 1px;
+}
+.main__cart-products-box-text-text {
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+}
+.main__cart-button {
+  color: #000;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  font-family: "Barlow", sans-serif;
+  background-color: #fff;
+  border: 1px solid #3e3d3d;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 3rem;
+  width: 100%;
+  display: block;
+}
+.main__cart-button.hidden-button-comprar {
+  display: none;
+}
+
+/*** ESTILOS BOTÓN SLIDE TOP ***/
+.ov-btn-slide-top {
+  color: rgb(213, 159, 244);
+  border: 2px solid rgb(213, 159, 244);
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.ov-btn-slide-top:hover {
+  color: #fff;
+}
+
+.ov-btn-slide-top::after {
+  content: "";
+  background: rgb(213, 159, 244);
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: -100%;
+  bottom: 100%;
+  transition: all 0.35s;
+}
+
+.ov-btn-slide-top:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.35s;
+}
+
+.tracking-in-expand-fwd-bottom {
+  opacity: 0; /* Ocultar por defecto */
+}
+
+.tracking-in-expand-fwd-bottom.active {
+  animation: tracking-in-expand-fwd-bottom 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  opacity: 1;
+}
+@keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px) translateY(500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-up {
+  to {
+    scale: 1.5;
+  }
+}
+@keyframes fade-away {
+  to {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=main.css.map */

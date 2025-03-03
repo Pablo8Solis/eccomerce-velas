@@ -1,0 +1,420 @@
+html{
+    font-size: 62.5%;
+    scroll-snap-type: y mandatory;
+    overflow-x: none;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px; /* 1rem = 10px*/
+    //background-color: $Beigesuave;
+}
+img{
+    max-width: 100%;
+}
+
+// Header
+
+.header{
+    
+    &__seccion-imagen{
+        position: relative;
+        width: 100%;
+        height: 70vh; /* Ajusta según necesites */
+        //background-color: rgb(79, 72, 72); /* Solo para ver cómo queda */
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+
+        &-fondo{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../img/header-fondo.jpg) no-repeat center/cover;
+            color: #fff;
+            //@include flex-box(center,center);
+            background-color: #6c6868; 
+            background-blend-mode: overlay;
+        }
+
+        &-onda{
+            position: relative;
+            width: 100%;
+            height: 100px; /* Altura del borde ondulado */
+        }
+
+        &-top{
+            @include flex-box(space-between,center);
+            padding: 3rem;
+
+            &-title{
+                color: $colorBlanco;
+                font-size: clamp(2.4rem,5vw,2.5rem);
+                text-decoration: none;
+                @include fontTitles;
+                text-transform: uppercase;
+            }
+            
+            &-icons{
+                cursor: pointer;
+
+                &-menu{
+                    width: 2.9rem;
+                    display: none;
+                    @include Celular{
+                        display: block;
+                    }
+                }
+                &-cart{
+                    width: 2.9rem;
+                }
+            }
+             //carrito
+            &-containerCart{
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+
+                &-cart-badge{
+                    position: absolute;
+                    top: -5px;
+                    right: -10px;
+                    background-color: rgb(218, 214, 214);
+                    color: rgb(0, 0, 0);
+                    @include fontText;
+                    font-size: 14px;
+                    font-weight: bold;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        &-box-title{
+            @include flex-box(center,center);
+            padding-top: 15rem;
+
+            &-styles{
+                font-size: clamp(1.2rem,10vw,7.3rem);
+                @include fontTitles;
+                letter-spacing: 1px;
+                @include Celular{
+                    text-align: center;
+                    
+                }
+            }
+        }
+    }
+
+    &__menu-mobile{
+        //@include flex-box(start,start);
+        //gap: 1rem;
+        //flex-direction: column;
+        width: 400px;
+        background-color: rgb(127, 59, 199);
+        padding: 4rem;
+        height: 88%;
+        border-radius: 1rem;
+        position: fixed;
+        left: -120%;
+        //right: -90%;
+        top: 80px;
+        z-index: 2;
+        overflow-y:auto;
+        transition:all 1s ease;
+        &.show-menu{
+            left: 1%;
+        }
+
+        &-box{
+            @include flex-box(space-between,end);
+            color: $colorBlanco;
+            @include fontText;
+            font-weight: 600;
+            font-size: 3rem;
+
+            &-icon{
+                cursor: pointer;
+            }
+        }
+
+        &-container-links{
+            @include flex-box(center,start);
+            flex-direction: column;
+            margin-top: 5rem;
+            gap: 2rem;
+
+            &-styles{
+                @extend %styleLinks;
+                font-size: 3.2rem;
+                @include fontTitles;
+                font-weight: 500;
+            }
+        }
+    }
+
+}
+
+.main{
+    //@include flex-box(center,center);
+    //padding: 4rem;
+
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-column-gap: 8rem;
+        grid-row-gap: 6rem;
+        margin-bottom: 4rem;
+        padding: 4rem;
+
+        &-product-1{
+            grid-area:  1 / 1 / 2 / 2;
+        }
+        &-product-2{
+            grid-area: 1 / 2 / 2 / 3;
+        }
+        &-product-3{
+            grid-area: 1 / 3 / 2 / 4; 
+        }
+        &-product-4{
+            grid-area: 2 / 1 / 3 / 2;
+        }
+        &-product-5{
+            grid-area: 2 / 3 / 3 / 4; 
+        }
+
+        &-products{
+            &-title{
+                @include fontTitles;
+                font-size: clamp(1rem,5vw,2.3rem);
+                padding-top: 1rem;
+            }
+
+            &-box-textButton{
+                @include flex-box(space-between,start);
+                padding-top: 1rem;
+                @include Celular{
+                    flex-direction: column;
+                    gap: .5rem;
+                }
+
+                &-styles{
+                    font-family: sans-serif;
+                    @include fontText;
+                    font-size: clamp(1rem,5vw,1.8rem);
+                    color: #3e3d3d;
+                }
+
+                &-button{
+                    color: #000;
+                    border: none;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    border-radius: 1.5rem;
+                    @include fontText;
+                    background-color: transparent;
+                    border: 1px solid #3e3d3d;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
+        }
+        @include Celular{
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+            padding: 2rem;
+
+            &-product-1{
+                grid-area: auto;
+            }
+            &-product-2{
+                grid-area: auto;
+            }
+            &-product-3{
+                grid-area: auto;
+            }
+            &-product-4{
+                grid-area: auto;
+            }
+            &-product-5{
+                grid-area: auto;
+            }
+
+        }
+    }
+
+    &__consejos{
+
+        &-box{
+            position: relative;
+            padding-top: 40px; 
+    
+            &-svg{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 40px; 
+                z-index: 1;
+            }
+    
+            &-contenido{
+                background-color: $colorMorado;
+                padding-top: 7rem; 
+                padding-bottom: 10px; 
+                height: fit-content; 
+                text-align: center;
+
+                &-title{
+                    @include fontTitles;
+                    font-size: clamp(1rem,7vw,5rem);
+                    padding-top: 2rem;
+                }
+
+                &-flex{
+                    @include flex-box(center,center);
+                    gap: 2rem;
+                    padding: 4rem;
+                    @include Celular{
+                        flex-direction: column;
+                    }
+
+                    &-article{
+                        background-color: #000;
+                        color: $colorMorado;
+                        padding: 1rem;
+                        padding-bottom: 4rem;
+                        margin-top: 3rem;
+                        height: 45rem;
+                        flex: 1;
+                        @include flex-box(center,center);
+                        flex-direction: column;
+
+                        &-title{
+                            @include fontTitles;
+                            font-size: clamp(1rem,5vw,3rem);
+                            padding-top: 5rem
+                        }
+
+                        &-text{
+                            @include fontText;
+                            line-height: 1.5;
+                            padding-top: 1rem;
+                            font-size: clamp(1rem,5vw,1.7rem);
+                        }
+
+                        &-img{
+                            width: 20rem;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__cart{
+        width: 500px;
+        background-color: rgb(127, 59, 199);
+        padding: 3rem;
+        height: 88%;
+        border-radius: 1rem;
+        position: fixed;
+        right: -170%;
+        //right: -90%;
+        top: 80px;
+        z-index: 1;
+        overflow-y:auto;
+        transition:all 1s ease;
+        &.show-cart{
+            right: 1%;
+        }
+        @include Celular{
+            width: 400px;
+            
+        }
+
+        &-icons{
+            cursor: pointer;
+        }
+
+        &-top{
+            @include flex-box(space-between,center);
+
+            &-title{
+                font-size: clamp(1rem,5vw, 1.9rem);
+                @include fontText;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: #fff;
+            }
+        }
+
+        &-products{
+            @include flex-box(space-between,start);
+            margin-top: 3.5rem;
+
+            &-img{
+                width: 14rem;
+            }
+
+            &-box{
+                @include flex-box(start,start);
+                gap: 2rem;
+
+                &-text{
+                    @include flex-box(start,start); 
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    &-title{
+                        color: #fff;
+                        @include fontTitles;
+                        font-size: clamp(1rem,5vw,1.9rem);
+                        letter-spacing: 1px;
+                    }
+                    &-text{
+                        color: #fff;
+                        @include fontText;
+                        font-weight:500;
+                    }
+                }
+            }
+        }
+
+        &-button{
+            color: #000;
+            border: none;
+            border-radius: 1rem;
+            padding: 1rem;
+            border-radius: 1.5rem;
+            @include fontText;
+            background-color: $colorBlanco;
+            border: 1px solid #3e3d3d;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 3rem;
+            width: 100%;
+            display: block;
+
+            
+            &.hidden-button-comprar{
+                display: none;
+            }
+        }
+
+
+    }
+}
+
+
+
+
+
