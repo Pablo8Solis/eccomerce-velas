@@ -69,6 +69,11 @@ img {
 }
 .header__seccion-imagen-top-icons {
   cursor: pointer;
+  transition: 1s;
+}
+.header__seccion-imagen-top-icons:hover {
+  transform: scale(1.05);
+  transition: 1s;
 }
 .header__seccion-imagen-top-icons-menu {
   width: 2.9rem;
@@ -149,6 +154,11 @@ img {
 }
 .header__menu-mobile-box-icon {
   cursor: pointer;
+  transition: 1s;
+}
+.header__menu-mobile-box-icon:hover {
+  transform: scale(1.05);
+  transition: 1s;
 }
 .header__menu-mobile-container-links {
   display: flex;
@@ -344,6 +354,11 @@ img {
 }
 .main__cart-icons {
   cursor: pointer;
+  transition: 1s;
+}
+.main__cart-icons:hover {
+  transform: scale(1.05);
+  transition: 1s;
 }
 .main__cart-top {
   display: flex;

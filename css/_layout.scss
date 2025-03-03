@@ -59,6 +59,11 @@ img{
             
             &-icons{
                 cursor: pointer;
+                transition: 1s;
+                &:hover{
+                    transform: scale(1.05);
+                    transition: 1s
+                }
 
                 &-menu{
                     width: 2.9rem;
@@ -141,6 +146,11 @@ img{
 
             &-icon{
                 cursor: pointer;
+                transition: 1s;
+                &:hover{
+                    transform: scale(1.05);
+                    transition: 1s
+                }
             }
         }
 
@@ -343,6 +353,11 @@ img{
 
         &-icons{
             cursor: pointer;
+            transition: 1s;
+            &:hover{
+                transform: scale(1.05);
+                transition: 1s
+            }
         }
 
         &-top{
