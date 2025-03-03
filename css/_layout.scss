@@ -414,6 +414,47 @@ img{
     }
 }
 
+.footer{
+    background-color: $colorMorado;
+    padding-top: 4rem;
+    @include flex-box(space-between,start);
+    padding: 3rem;
+    @include Celular{
+        flex-direction: column;
+        gap: 2rem;
+
+    }
+
+    &__info{
+        @include flex-box(start,start);
+        flex-direction: column;
+        gap: 1rem;
+
+        &-title{
+            font-size: clamp(1rem,5vw,4.5rem);
+            @include fontTitles;
+        }
+        &-text{
+            @include fontText;
+            font-size: clamp(1rem,5vw,2rem);
+        }
+    }
+
+    &__social{
+        @include flex-box(center,center);
+        flex-direction: column;
+        gap: 1rem;
+        @include fontText;
+        @include Celular{
+            flex-direction: row;
+        }
+        
+        &-links{
+            color: #000;
+        }
+    }
+}
+
 
 
 
